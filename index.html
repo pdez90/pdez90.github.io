@@ -1,11 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8"> 
-    <title>Hello World</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Priyanka's website</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="css/3-col-portfolio.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
+
 <body>
-    <h1>Hello World</h1>
-    <p>I wuz here.</p>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Priyanka's Website</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">Resume</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Priyanka deSouza
+                    <small>Engineer, Environmentalist, Urban Planner</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div>
+            <div>
+                <a href="#">
+                    <img class="img-responsive" src="images/desouzap.jpg" alt="">
+                </a>
+                <h3>
+                    <a>About Me</a>
+                </h3>
+                <p>I am a Research Fellow at the <a href= http://senseable.mit.edu/ > Senseable City Lab</a> at MIT. My work at the lab focuses on studying air quality. I have a Bachelor and Master of Technology from the Indian Institute of Technology Bombay, and an MSc in Environmental Change and Management and an MBA from the University of Oxford where I studied as a Rhodes Scholar</p>
+            </div>
+        </div> 
+
+        <div id="map" style="width: 705px; height: 375px"></div>
+        
+            
+          
+            
+
+    
+    
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Priyanka deSouza 2017</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script>
+    // Create variable to hold map element, give initial settings to map
+    //var map = L.map('map',{ center: [42.362432, -71.086086], zoom: 14});
+    var map = L.map('map',{ center: [51.7520, -1.2577], zoom: 2});
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+    var myDataPoint = L.marker([19.0760, 72.8777]).addTo(map);
+    myDataPoint.bindPopup("<h3>Home: Mumbai</h3><p>M<br>I grew up in Mumbai. I went to Bombay Scottish School from classes 1 to 10 (2006), DG Ruparel College for junior college (2008), and then did my Bachelor and Master of Technology in Energy Engineering with a minor in Physics from the Indian Institute of Technology Bombay (2013)</p>");
+    var Oxford = L.marker([51.7520, -1.2577]).addTo(map);
+    Oxford.bindPopup("<h3>University of Oxford</h3><p><br>I obtained an MSc in Environmental Change and Management (2014) and an MBA (2015) from the University of Oxford where I studied for 2 years as a Rhodes Scholar</p>");
+    var Delhi= L.marker([26.6139, 77.2090]).addTo(map);
+    Delhi.bindPopup("<h3>Delhi</h3><p>M<br> I did an internship with the Observer Research Foundation in Delhi in December 2011 where I studied and wrote a policy paper about the Hydrocarbon Sector of India. I was invited to present a paper on the maritime implications of the hydrocarbon sector at the National Maritime Foundation in Delhi in Feb 2013. I did an internship at the Center for Energey, the Environment and Water in July of 2013 </p>");
+    var Encraft= L.marker([52.2671, -1.4675]).addTo(map);
+    Encraft.bindPopup("<h3>Encraft, Warwick</h3><p><br> I worked part time at Encraft, a physics consultancy, where I modeled different pricing strategies for a proposed Energy Service Company in the midlands of the UK </p>");
+    var unep= L.marker([-1.2921, 36.8219]).addTo(map);
+    unep.bindPopup("<h3>United Nations Environment Program (UNEP)</h3><p><br> I worked first as an intern, and then as a consultant for the Science Division at UNEP from June 2015 to June 2016. I was part of a team that deployed six low cost air quality monitoring units in 5 schools and 1 community center in Nairobi. We have submitted a paper based on our results. I also taught kids how to use raspberry pis at the Kibera Girls Soccer Academy on Saturdays </p>");
+    var mit= L.marker([42.3601, -71.0942]).addTo(map);
+    mit.bindPopup("<h3>Massachusetts Institute of Technology</h3><p><br> I am currently employed as a Research Fellow at the Senseable City Lab at the Department of Urban Studies and Planning at MIT. My work revolves around studying air quality. I started work here in August 2016 </p>");
+    var dd= L.marker([37.7749, -122.4194]).addTo(map);
+    dd.bindPopup("<h3>Project Drawdownd</h3><p><br> I worked part time from May 2016 to December 2016 as a Research Fellow at Project Drawdown where I modeled the climate and financial impacts of microwind turbines, roof-top solar PV and roof-top solar water heating for different possible adoption scenarios. My work wll be included in a book that is coming out soon </p>");
+
+    </script>
+    
+
 </body>
+
 </html>
